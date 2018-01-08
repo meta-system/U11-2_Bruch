@@ -15,8 +15,14 @@ public class Bruch{
 		nenner = (n = 0)? 1 : n;
 		this.kuerze();
 	}
-	public kuerze(){
-		//...
+	public void kuerze(){
+		for (int i = (zaehler > nenner) ? zaehler : nenner; 1 < i; i--){
+			if ((i % zaehler == 0) && (i % nenner == 0)){
+				zaehler /= i; nenner /= i;
+				return;
+			}
+		}
+		return;
 	}
 	public String toString(){
 		return (z + "/" + n);
